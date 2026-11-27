@@ -1,0 +1,7 @@
+{
+  "name": "jsdr-studio",
+  "owner": { "name": "nesscre8tive x AI Storians" },
+  "plugins": [
+    { "name": "jsdr", "source": "./skills", "description": "JSDR, 진성형외과 영상 스튜디오: 인터뷰 편집, 롱폼, 숏폼" }
+  ]
+}

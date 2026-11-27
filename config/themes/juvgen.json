@@ -1,0 +1,23 @@
+{
+ "_": "JSDR, JUVGEN 회사 영상. 공식 가이드를 받기 전 임시값: jsdr.com JUVGEN 핀 마크의 코발트 #1D3C8F, 흰 바탕, 먹색 글자. 손글씨와 노랑은 쓰지 않는다. 가이드를 받으면 이 파일만 고친다.",
+ "caption": {
+  "glow": "#0E1116",
+  "hl": "#7FA2FF",
+  "em": "#FFFFFF"
+ },
+ "chapter": {
+  "title_font": "fonts/Pretendard-Bold.ttf",
+  "title_size": 0.05,
+  "stroke": "#1D3C8F"
+ },
+ "logo": {
+  "file": "logo-juvgen.png",
+  "x": 0.84,
+  "y": 0.06,
+  "w": 0.12
+ },
+ "shorts": {
+  "accent": "#7FA2FF",
+  "credit": "JSDR   JUVGEN"
+ }
+}

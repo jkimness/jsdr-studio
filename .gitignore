@@ -1,0 +1,9 @@
+# 작업물, 클라이언트 자료, 이 컴퓨터만의 설정은 git 에 넣지 않는다
+work/
+plans/
+kit/
+deliver/
+config/local.json
+__pycache__/
+*.pyc
+.DS_Store

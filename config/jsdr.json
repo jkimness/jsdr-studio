@@ -1,0 +1,167 @@
+{
+ "_": "JSDR 영상 스튜디오 기본값. 브랜드별 색과 글자는 config/themes/, 이 컴퓨터만의 자리는 config/local.json (git 밖).",
+ "kit": "kit",
+ "deliver": "deliver",
+ "out": {
+  "max_mb": 290,
+  "final": {
+   "w": 3840,
+   "h": 2160,
+   "bitrate": "45M"
+  },
+  "draft": {
+   "w": 1920,
+   "h": 1080,
+   "bitrate": "10M"
+  }
+ },
+ "whisper": {
+  "model": "large-v3-turbo",
+  "lang": "ko",
+  "prompt": "솔직한 의사생활, 성형외과 전문의 진세훈 원장님, 쥬브젠, 자가진피재생술, 인디언밴드, 모공성 흉터, 여드름 흉터, 팔자주름, 목주름, 눈꼬리 주름."
+ },
+ "corrections": {
+  "주부젠": "쥬브젠",
+  "쥐브젠": "쥬브젠",
+  "쥬부젠": "쥬브젠",
+  "주브젠": "쥬브젠",
+  "쥬브잰": "쥬브젠",
+  "인디얀": "인디언",
+  "인디언랜드": "인디언밴드",
+  "폐인 자국": "패인 자국",
+  "주문의": "전문의"
+ },
+ "forbidden": [
+  "영구",
+  "반영구",
+  "완치",
+  "부작용 없",
+  "부작용이 없",
+  "1회로 끝",
+  "한 번으로 끝",
+  "이물질 없",
+  "100%",
+  "무조건",
+  "최고",
+  "유일"
+ ],
+ "vad": {
+  "up_db": 9.0,
+  "min_silence": 0.16,
+  "min_speech": 0.12,
+  "pad_before": 0.08,
+  "pad_after": 0.12
+ },
+ "keep_gap": 0.45,
+ "caption_chars": 22,
+ "shots": {
+  "wide": 1.09,
+  "mid": 1.3,
+  "tight": 1.45
+ },
+ "face_target": [
+  0.52,
+  0.465
+ ],
+ "pip": {
+  "d": 0.37,
+  "cx": 0.83,
+  "cy": 0.745,
+  "src": 0.49,
+  "ring": 0.006,
+  "left_cx": 0.17
+ },
+ "grade": "curves=all='0/0 0.07/0.03 0.5/0.49 1/1'",
+ "broll_push": 0.04,
+ "caption": {
+  "font": "fonts/Pretendard-Bold.ttf",
+  "size": 0.054,
+  "y": 0.87,
+  "max_w": 0.86,
+  "max_w_pip": 0.44,
+  "fill": "#FFFFFF",
+  "glow": "#101E50",
+  "hl": "#2F6BEA",
+  "em": "#FFE23A"
+ },
+ "chapter": {
+  "num_font": "fonts/Pretendard-Black.otf",
+  "num_size": 0.085,
+  "title_font": "fonts/NanumPen.otf",
+  "title_size": 0.075,
+  "x": 0.036,
+  "y": 0.052,
+  "stroke": "#14235A"
+ },
+ "logo": {
+  "file": "logo.png",
+  "x": 0.84,
+  "y": 0.0657,
+  "w": 0.1193
+ },
+ "title": {
+  "font": "fonts/Pretendard-Bold.ttf",
+  "size": 0.115,
+  "y": 0.5,
+  "dim": 0.38
+ },
+ "card": {
+  "font": "fonts/Pretendard-Medium.ttf",
+  "size": 0.0245,
+  "pos": [
+   0.05,
+   0.69
+  ]
+ },
+ "case_note": "※실제 쥬브젠을 이용해 치료한 환자 케이스",
+ "gradient": {
+  "from": 0.62,
+  "alpha": 0.42
+ },
+ "fade": 0.25,
+ "sfx": {
+  "file": "sfx/whoosh.wav",
+  "gain_db": -16,
+  "_": "챕터가 바뀔 때와 큰 제목이 뜰 때. 끄려면 계획에 \"sfx\": false"
+ },
+ "lufs": -14.0,
+ "theme": "jinps",
+ "shorts": {
+  "bg": "#0B0D12",
+  "soft": "#C9CDD3",
+  "accent": "#FFC83D",
+  "card": [
+   40,
+   470,
+   1000,
+   860
+  ],
+  "radius": 36,
+  "face_y": 0.42,
+  "zoom": [
+   1.25,
+   1.5,
+   1.7
+  ],
+  "font_light": "fonts/Pretendard-Medium.ttf",
+  "font_bold": "fonts/Pretendard-Bold.ttf",
+  "font_heavy": "fonts/Pretendard-Black.otf",
+  "title1": {
+   "size": 46,
+   "y": 268
+  },
+  "title2": {
+   "size": 92,
+   "y": 332
+  },
+  "caption": {
+   "size": 56,
+   "y": 1392,
+   "chars": 16
+  },
+  "credit": "진세훈 원장   솔직한의사생활",
+  "credit_size": 28,
+  "credit_y": 1650,
+  "bitrate": "8M"
+ }
+}
