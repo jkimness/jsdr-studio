@@ -20,7 +20,7 @@ if [ ! -f config/local.json ] || ! grep -q model_path config/local.json; then
 fi
 echo "4. 폴더"
 mkdir -p kit plans work deliver
-[ -f kit/logo.png ] || echo "  kit/ 에 logo.png, intro.mp4, outro.mp4 를 넣어 주세요 (팀 공유 드라이브의 편집 키트). 다른 자리에 두려면 config/local.json 에 \"kit\" 경로를 적습니다"
+{ [ -f kit/logo.png ] || grep -q '"kit"' config/local.json 2>/dev/null; } || echo "  kit/ 에 logo.png, intro.mp4, outro.mp4 를 넣어 주세요 (팀 공유 드라이브의 편집 키트). 다른 자리에 두려면 config/local.json 에 \"kit\" 경로를 적습니다"
 echo "5. Claude Code 스킬"
 if command -v claude >/dev/null; then
   claude plugin marketplace add "$(pwd)" 2>/dev/null || claude plugin marketplace update jsdr-studio 2>/dev/null || true
