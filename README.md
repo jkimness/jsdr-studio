@@ -21,6 +21,7 @@ Claude Code 를 `~/Projects/jsdr-studio` 에서 열고 이렇게 말합니다.
 
 - "이 원본 편집해 줘: <영상 경로>" → 스킬 `jsdr:jsdr-studio` 가 준비부터 최종판까지 안내합니다
 - "숏폼도 뽑아 줘" → `jsdr:jsdr-shorts`
+- "동탄 피부과, 성형외과 리스트업해 줘", "이 병원 목록에 주소 채워 줘" → `jsdr:jsdr-hospital-list` (영업용 병원 리스트, 영상과는 따로)
 
 직접 돌릴 수도 있습니다.
 
