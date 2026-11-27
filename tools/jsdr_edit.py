@@ -774,6 +774,32 @@ def short_png(f, sh_def, path):
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     t1, t2 = (sh_def["title"] + [""])[:2] if len(sh_def["title"]) > 1 else ("", sh_def["title"][0])
+    l = f["line"]
+    rows = split_caption(l.get("text", ""), S["caption"]["chars"]) if not l.get("nocap") else []
+    if S.get("style") == "full":
+        # 채널 쇼츠 모양: 꽉 찬 화면, 위쪽 제목 두 줄 상자, 가운데 아래 자막, 맨 아래 로고
+        y = S["box1"]["y"]
+        for t, bx in ((t1, S["box1"]), (t2, S["box2"])):
+            if not t:
+                continue
+            fn = font(S["font_heavy"], bx["size"])
+            tw, (asc, desc) = fn.getlength(t), fn.getmetrics()
+            px, py = int(bx["size"] * 0.42), int(bx["size"] * 0.2)
+            d.rounded_rectangle((W / 2 - tw / 2 - px, y, W / 2 + tw / 2 + px, y + asc + desc + py * 2), radius=int(bx["size"] * 0.2), fill=rgba(bx["bg"]))
+            d.text((W / 2 - tw / 2, y + py), t, font=fn, fill=rgba(bx["fg"]))
+            y += asc + desc + py * 2 + 10
+        fc = font(S["font_bold"], S["caption"]["size"])
+        sw_ = max(4, int(S["caption"]["size"] * 0.11))
+        for k, r in enumerate(rows[:2]):
+            d.text((W / 2 - fc.getlength(r) / 2, S["caption"]["y"] + k * S["caption"]["size"] * 1.3), r, font=fc,
+                   fill=rgba(S["accent"] if l.get("em") else "#FFFFFF"), stroke_width=sw_, stroke_fill=rgba(S["caption"]["stroke"]))
+        lg = asset(CFG["logo"]["file"])
+        if os.path.exists(lg):
+            lo = Image.open(lg).convert("RGBA")
+            lo = lo.resize((S["logo_w"], int(lo.height * S["logo_w"] / lo.width)), Image.LANCZOS)
+            im.alpha_composite(lo, (int(W / 2 - lo.width / 2), S["logo_y"]))   # 남색 그대로 (흰 가운 위에 놓인다)
+        im.save(path)
+        return
     f1, f2 = font(S["font_light"], S["title1"]["size"]), font(S["font_heavy"], S["title2"]["size"])
     if t1:
         d.text((W / 2 - f1.getlength(t1) / 2, S["title1"]["y"]), t1, font=f1, fill=rgba(S["soft"]))
@@ -783,9 +809,7 @@ def short_png(f, sh_def, path):
     for t, a in parts:
         d.text((x, S["title2"]["y"]), t, font=f2, fill=rgba(S["accent"] if a else "#FFFFFF"))
         x += f2.getlength(t)
-    l = f["line"]
     fc = font(S["font_bold"], S["caption"]["size"])
-    rows = split_caption(l.get("text", ""), S["caption"]["chars"]) if not l.get("nocap") else []
     for k, r in enumerate(rows[:2]):
         col = S["accent"] if l.get("em") else "#FFFFFF"
         d.text((W / 2 - fc.getlength(r) / 2, S["caption"]["y"] + k * S["caption"]["size"] * 1.32), r, font=fc, fill=rgba(col))

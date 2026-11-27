@@ -40,7 +40,7 @@ Claude Code 를 `~/Projects/jsdr-studio` 에서 열고 이렇게 말합니다.
 ## 브랜드 테마
 
 `config/themes/jinps.json` 진성형외과와 솔직한의사생활, `config/themes/juvgen.json` JSDR 과 JUVGEN.
-`juvgen` 은 공식 디자인 가이드를 받기 전 임시값입니다. 색, 서체, 로고가 정해지면 그 파일만 고치면 됩니다.
+기준은 `config/brands.json` 입니다. 두 채널에 올라와 있던 영상과 인스타에서 잰 값이고, 색이 원본과 몇 단계 다를 수 있습니다. 고치려면 테마 파일만 고치면 됩니다.
 
 ## 꼭 읽을 것
 
